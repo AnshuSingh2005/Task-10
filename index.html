@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Info. Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-image: url(back1.jpg);
+      padding: 40px;
+    }
+
+    .form-container {
+     
+      max-width: 600px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 15px;
+      
+      transition: all 0.3s ease-in-out;
+      background-image:url(back.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .form-container:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      text-align: center;
+      color: #023047;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #219ebc;
+      outline: none;
+      box-shadow: 0 0 5px rgba(33, 158, 188, 0.5);
+    }
+
+    .radio-group, .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      font-weight: normal;
+      color: #333;
+    }
+
+    .radio-group input,
+    .checkbox-group input {
+      margin-right: 5px;
+    }
+
+   
+
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"] {
+      background-color: #38b000;
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2a8700;
+    }
+
+    button[type="reset"] {
+      background-color: #ef476f;
+      color: white;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #d00043;
+    }
+
+    @media (max-width: 600px) {
+      .radio-group,
+      .checkbox-group {
+        flex-direction: column;
+      }
+
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>📝 Information Form...... </h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder="XXX-XXX-XX00">
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required placeholder="abc@email.com">
+
+      <label>Gender:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+
+      <label>Qualification:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="qualification" value="Matriculation"> Matriculation</label>
+        <label><input type="checkbox" name="qualification" value="Diploma">Diploma</label>
+        <label><input type="checkbox" name="qualification" value="B.tech"> B.Tech</label>
+        <label><input type="checkbox" name="qualification" value="M.Tech"> M.Tech</label>
+      </div>
+
+      <label for="tea">Do you like tea?</label>
+      <select id="tea" name="tea">
+        <option value="">--Choose an option--</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="Sometimes">Sometimes</option>
+      </select>
+
+      <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
